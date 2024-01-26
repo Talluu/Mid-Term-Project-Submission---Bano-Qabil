@@ -1,0 +1,52 @@
+from random import randrange
+count = 0
+def welcome(names):
+    print()
+    for i in range(20):
+        print('*',end='')
+    print('\nWelcome',names,'\n')
+    for i in range(20):
+        print('*',end='')
+    return '*'
+name = input('kindly enter your name:\n')
+print(welcome(name))
+print('\nChooose your difficulty level\n\n1.Easy\n2.Normal\n3.Hard\n4.Extreme\n')
+
+choice = int(input())
+
+if choice == 1:
+    count = 15
+elif choice == 2:
+    count = 10
+elif choice == 3:
+    count = 5
+elif choice == 4:
+    count = 2
+
+x=randrange(0,50)
+
+
+while count!=0:
+    for i in range(20):
+        print('*',end='')
+    print()
+    
+    
+    for i in range(20):
+        print('*',end='')
+    print()
+    print('You have',count,'tries.\n')
+
+    n=int(input('Enter a number: '))
+    if n < x:
+        print(f'{n} is smaller\n')
+        count-=1
+    elif n > x:
+        print(f'{n} is greater\n')
+        count-=1
+    elif n == x:
+        print(f'Congratulations you have won the game!!!')
+        break
+
+print(f'Right answer was {x}')
+c = input('Press any key to exit')   
